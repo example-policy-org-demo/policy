@@ -1,0 +1,26 @@
+
+name: tests
+
+policies:
+  - policy.yaml
+resources:
+  - fail0.yaml
+  - fail1.yaml
+  - pass0.yaml
+
+results:
+- policy: rds-should-be-encrypted
+  rule: rds-should-be-encrypted
+  resource: rds-should-be-encrypted-0
+  kind: DBInstance
+  result: fail
+- policy: rds-should-be-encrypted
+  rule: rds-should-be-encrypted
+  resource: rds-should-be-encrypted-1
+  kind: DBInstance
+  result: fail
+- policy: rds-should-be-encrypted
+  rule: rds-should-be-encrypted
+  resource: rds-should-be-encrypted-2
+  kind: DBInstance
+  result: pass

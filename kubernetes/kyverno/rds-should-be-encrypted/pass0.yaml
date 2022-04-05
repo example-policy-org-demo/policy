@@ -1,0 +1,28 @@
+apiVersion: rds.services.k8s.aws/v1alpha1
+kind: DBInstance
+metadata:
+  name: rds-should-be-encrypted-2
+  labels:
+    mycompany.com/policy-version: "1.0.0"
+spec:
+  allocatedStorage: 
+  autoMinorVersionUpgrade: true
+  backupRetentionPeriod: 7
+  dbInstanceClass: 
+  dbInstanceIdentifier: 
+  dbName: demo
+  dbSubnetGroupName: 
+  enablePerformanceInsights: true
+  engine: postgres
+  engineVersion: "13"
+  masterUsername: 
+  masterUserPassword:
+    namespace: 
+    name: demo-postgres-creds
+    key: password
+  multiAZ: true
+  publiclyAccessible: false
+  storageEncrypted: true
+  storageType: gp2
+  vpcSecurityGroupIDs:
+    - EKS_VPC_ID
